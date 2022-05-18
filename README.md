@@ -5,6 +5,7 @@ This repository contains source code for a simple implementation of Spring Secur
 
 The application flow is as illustrated below for authentication, authorization and generation of refresh token.
 ![Application Flow](https://bmacharia.com/wp-content/uploads/2022/05/combined_flow.png)
+
 ## Deployment
 > - Clone the repository
 > - Open in the folder your IDE
