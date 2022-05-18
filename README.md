@@ -8,7 +8,7 @@ The application flow is as illustrated below for authentication, authorization a
 ## Deployment
 > - Clone the repository
 > - Open in the folder your IDE
-> - Edit the src/main/resources/application.properties file with you DB configuration
+> - Edit the `src/main/resources/application.properties` file with you DB configuration
 > - Run the application
 > - Test the API endpoints using the downloaded postman collection
 ## References
