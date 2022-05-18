@@ -4,6 +4,7 @@ Spring Security comes in handy by providing a powerful, secure and customizable 
 This repository contains source code for a simple implementation of Spring Security framework in Spring Boot.
 
 The application flow is as illustrated below for authentication, authorization and generation of refresh token.
+
 ![Application Flow](https://bmacharia.com/wp-content/uploads/2022/05/combined_flow.png)
 
 ## Deployment
