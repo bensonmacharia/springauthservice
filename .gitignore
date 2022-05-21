@@ -1,7 +1,7 @@
 .idea/*
 .mvn/*
 target/*
-src/main/resources/application.properties
+# src/main/resources/application.properties
 HELP.md
 mvnw
 mvnw.cmd
