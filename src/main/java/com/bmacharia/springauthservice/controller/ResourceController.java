@@ -4,10 +4,7 @@ import com.bmacharia.springauthservice.model.Article;
 import com.bmacharia.springauthservice.model.ERole;
 import com.bmacharia.springauthservice.model.Role;
 import com.bmacharia.springauthservice.model.User;
-import com.bmacharia.springauthservice.payload.AddUserRequest;
-import com.bmacharia.springauthservice.payload.ArticlePost;
-import com.bmacharia.springauthservice.payload.ArticleQuery;
-import com.bmacharia.springauthservice.payload.MessageResponse;
+import com.bmacharia.springauthservice.payload.*;
 import com.bmacharia.springauthservice.repository.ArticleRepository;
 import com.bmacharia.springauthservice.repository.RoleRepository;
 import com.bmacharia.springauthservice.repository.UserRepository;
@@ -170,4 +167,47 @@ public class ResourceController {
         }
     }
 
+    @PostMapping("/user/add/role")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> addUserRole(@Valid @RequestBody AddUserRoleRequest addUserRoleRequest) {
+        User user = userRepository.findByUsername(addUserRoleRequest.getUsername());
+        if (user != null) {
+            Set<String> strRoles = addUserRoleRequest.getRole();
+            Set<Role> roles = new HashSet<>();
+            if (strRoles == null) {
+                Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+                        .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                roles.add(userRole);
+            } else {
+                strRoles.forEach(role -> {
+                    switch (role) {
+                        case "admin":
+                            Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                            roles.add(adminRole);
+                            break;
+                        case "mod":
+                            Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
+                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                            roles.add(modRole);
+                            break;
+                        case "vis":
+                            Role visRole = roleRepository.findByName(ERole.ROLE_VISITOR)
+                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                            roles.add(visRole);
+                            break;
+                        default:
+                            Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                            roles.add(userRole);
+                    }
+                });
+            }
+            user.setRoles(roles);
+            userRepository.save(user);
+            return ResponseEntity.ok(new MessageResponse("User role added successfully!"));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
