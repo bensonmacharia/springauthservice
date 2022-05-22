@@ -1,7 +1,7 @@
 ## Spring Security
 Spring Security comes in handy by providing a powerful, secure and customizable `authentication` and `authorization` framework for Spring Boot microservices. Spring Security implements a `Role Based Access Control (RBAC)` model that can help mitigate some inherent Authentication and Authorization security challenges such as violation of the least privilege principle, insecure direct object references and unauthorized privilege escalation.
 ## Authentication and Authorization
-This repository contains source code for a simple implementation of Spring Security framework in Spring Boot.
+This repository contains source code for a simple implementation of Spring Security framework in Spring Boot. This can be deployed locally or accessed through the Heroku link https://springauthservice.herokuapp.com making use of the accompanied postman collection.
 
 The application flow is as illustrated below for authentication, authorization and generation of refresh token.
 

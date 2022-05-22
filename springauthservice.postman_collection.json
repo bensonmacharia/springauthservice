@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "1ac07ab2-ffc1-4244-99a4-fe67cfc16a3b",
+		"name": "springauthservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17025075"
+	},
+	"item": [
+		{
+			"name": "User Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"mkay\",\n    \"email\":\"mkay@bmacharia.com\",\n    \"password\":\"mkay@1234*\",\n    \"firstname\":\"Mike\",\n    \"lastname\":\"Kay\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/user/signup",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"mkay\",\n    \"password\":\"mkay@1234*\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/user/signin",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Signout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/user/signout",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/res/articles",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"res",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View User Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MjI5OTEwNCwiZXhwIjoxNjUyMjk5MTY0fQ.Y4QgwSVSj_u8Q4TJAiH-JV250WuJ2S-qTOhW630sp7dqqqY4Ljym2xW9pddbfIz1x4dpdLue99OtyWn5xW73Ww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/res/user/profile",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"res",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View All Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MzE2NTIzMywiZXhwIjoxNjUzMTY4ODMzfQ.W7twqXB2pRsCfpbbiVHoudBRg90-e2lwK1dKQjb17IKgLB74K4o2zVVx7_alG8k1EVivZTErPQD5lMWlTn5iKQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/res/users",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"res",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MjI5OTEwNCwiZXhwIjoxNjUyMjk5MTY0fQ.Y4QgwSVSj_u8Q4TJAiH-JV250WuJ2S-qTOhW630sp7dqqqY4Ljym2xW9pddbfIz1x4dpdLue99OtyWn5xW73Ww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/res/user/2",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"res",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refreshToken\":\"299ae1ed-fc9e-4573-ac0d-a4367911f375\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/user/refreshtoken",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"refreshtoken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJta2F5IiwiaWF0IjoxNjUzMTY1NzE0LCJleHAiOjE2NTMxNjkzMTR9.DOuW6tnzVnOc-sETkGToFPRkJP3V3IQOQzZAPndiAyE64zvbPkOOWM4Q9cS_2nEOh01WCRdYD6Iw-96IUkobUw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"Testing Article 2\",\n    \"body\":\"This is the second article in this blog.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/res/article/add",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"res",
+						"article",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MjI5NjY4MCwiZXhwIjoxNjUyMjk2NzQwfQ.daT6Om_0C5EExuIvVVxfDprGKFa2Zq8ZKJeyVKXhQGEUMspppEkABr5dD2xVJIINKjxJqns58OG6pLRkJuAeVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"skeen\",\n    \"email\":\"skeen@bmacharia.com\",\n    \"password\":\"skeen@1234*\",\n    \"firstname\":\"Stephen\",\n    \"lastname\":\"Keen\",\n    \"role\":[\"user\", \"mod\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/res/user/add",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"res",
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Article By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqZG9lIiwiaWF0IjoxNjUyNDczODY2LCJleHAiOjE2NTI0Nzc0NjZ9.Jz1NUnR_nnmYNkcAXRF9-vMZlfDUTWHcC6wH7bzsPhr5J82O007PuQIGCFdI0IG3e5mMRrvUuahim40IaAQbLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/res/article/3",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"res",
+						"article",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MzE2NDUzMCwiZXhwIjoxNjUzMTY4MTMwfQ.QaTYbD9eI02Arn6Wvm0-1_el2FC-5MBKRT3MH-21wv2FliB-J3xRm4faPQb50OPiDt3MrCNwaqITs_rdjIzG0A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"mkay\",\n    \"role\":[\"user\", \"mod\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://springauthservice.herokuapp.com/api/res/user/add/role",
+					"protocol": "https",
+					"host": [
+						"springauthservice",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"res",
+						"user",
+						"add",
+						"role"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
